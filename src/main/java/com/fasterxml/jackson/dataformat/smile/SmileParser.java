@@ -1874,6 +1874,7 @@ public class SmileParser extends ParserBase
            _seenNames[_seenNameCount++] = name;
         }
         _parsingContext.setCurrentName(name);
+        _currToken = JsonToken.FIELD_NAME;
     }
 
     /**
