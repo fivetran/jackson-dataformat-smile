@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion> 
+  <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.fasterxml.jackson</groupId>
     <artifactId>jackson-parent</artifactId>
@@ -8,19 +8,19 @@
   </parent>
   <groupId>com.fasterxml.jackson.dataformat</groupId>
   <artifactId>jackson-dataformat-smile</artifactId>
-  <version>2.7.2-SNAPSHOT</version>
+  <version>2.7.2-1-FIVETRAN</version>
   <name>Jackson-dataformat-Smile</name>
   <packaging>bundle</packaging>
   <description>Support for reading and writing Smile ("binary JSON")
 encoded data using Jackson abstractions (streaming API, data binding,
 tree model)
   </description>
-  <url>http://github.com/FasterXML/jackson-dataformat-smile</url>    
+  <url>http://github.com/FasterXML/jackson-dataformat-smile</url>
 
   <scm>
     <connection>scm:git:git@github.com:FasterXML/jackson-dataformat-smile.git</connection>
     <developerConnection>scm:git:git@github.com:FasterXML/jackson-dataformat-smile.git</developerConnection>
-    <url>http://github.com/FasterXML/jackson-dataformat-smile</url>    
+    <url>http://github.com/FasterXML/jackson-dataformat-smile</url>
     <tag>HEAD</tag>
   </scm>
 
@@ -87,5 +87,35 @@ tree model)
         </configuration>
       </plugin>
     </plugins>
+
+    <extensions>
+      <extension>
+        <groupId>org.springframework.build</groupId>
+        <artifactId>aws-maven</artifactId>
+        <version>5.0.0.RELEASE</version>
+      </extension>
+    </extensions>
   </build>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>fivetran-maven-snapshot</id>
+      <url>s3://fivetran-maven/snapshot</url>
+    </snapshotRepository>
+    <repository>
+      <id>fivetran-maven-release</id>
+      <url>s3://fivetran-maven/release</url>
+    </repository>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>fivetran-maven-snapshot</id>
+      <url>s3://fivetran-maven-private/snapshot</url>
+    </repository>
+      <repository>
+        <id>fivetran-maven-release</id>
+        <url>s3://fivetran-maven-private/release</url>
+      </repository>
+  </repositories>
 </project>
