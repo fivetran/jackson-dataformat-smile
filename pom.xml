@@ -98,21 +98,13 @@ tree model)
   </build>
 
   <distributionManagement>
-    <snapshotRepository>
-      <id>fivetran-maven-snapshot</id>
-      <url>s3://fivetran-maven/snapshot</url>
-    </snapshotRepository>
     <repository>
       <id>fivetran-maven-release</id>
-      <url>s3://fivetran-maven/release</url>
+      <url>s3://fivetran-maven/public/release</url>
     </repository>
   </distributionManagement>
 
   <repositories>
-    <repository>
-      <id>fivetran-maven-snapshot</id>
-      <url>s3://fivetran-maven-private/snapshot</url>
-    </repository>
       <repository>
         <id>fivetran-maven-release</id>
         <url>s3://fivetran-maven-private/release</url>
