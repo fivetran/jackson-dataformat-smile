@@ -107,7 +107,7 @@ tree model)
   <repositories>
       <repository>
         <id>fivetran-maven-release</id>
-        <url>s3://fivetran-maven-private/release</url>
+        <url>s3://fivetran-maven/public/release</url>
       </repository>
   </repositories>
 </project>
