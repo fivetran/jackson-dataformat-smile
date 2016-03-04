@@ -105,9 +105,10 @@ tree model)
   </distributionManagement>
 
   <repositories>
-      <repository>
-        <id>fivetran-maven-release</id>
-        <url>https://fivetran-maven/public/release</url>
-      </repository>
+    <repository>
+      <id>aws-public-release</id>
+      <name>AWS Public Release Repository</name>
+      <url>https://s3.amazonaws.com/fivetran-maven/public/release</url>
+    </repository>
   </repositories>
 </project>
